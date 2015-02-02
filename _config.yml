@@ -1,0 +1,103 @@
+# SITE CONFIGURATION
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://carinae.net" # the base hostname & protocol for your site
+name: "Continuous Reconsideration"
+description: 'Carlos Vara&#039;s writings about software development'
+
+gems:
+  - jekyll-archives
+
+jekyll-archives:
+  enabled:
+    - year
+    - month
+    - categories
+    - tags
+  layouts:
+    year: year-archive
+    month: month-archive
+    day: day-archive
+    tag: tag-archive-layout
+    category: tag-archive-layout
+  permalinks:
+    year: '/:year/'
+    month: '/:year/:month/'
+    day: '/:year/:month/:day/'
+    tag: '/tag/:name/'
+    category: '/category/:name/'
+
+sitemap:
+  file: "/sitemap.xml"
+  exclude:
+    - "/atom.xml"
+    - "/feed.xml"
+    - "/feed/index.xml"
+    - "/404.html"
+    - "/css/main.css"
+    - "/archives/"
+  include_posts:
+    - "/index.html"
+  change_frequency_name: "changefreq"
+  priority_name: "priority"
+
+# THEME-SPECIFIC CONFIGURATION
+theme:
+  # Meta
+  title: Continuous Reconsideration
+  subtitle: Carlos Vara&#039;s writings about software development
+  description: "Continuous Reconsideration - Carlos Vara&#039;s writings about software development" # used by search engines
+  
+  # Header and footer text
+  header_text: >
+     <h3>Continuous Reconsideration</h3>
+     <p>Carlos Vara&#039;s writings about software development</p>
+  footer_text: >
+   Pre-rendered by <a href="http://jekyllrb.com">Jekyll</a> with <a href="https://rohanchandra.github.io/project/type.html">Type Theme</a> // Hosted in <a href="http://aws.amazon.com/s3/">S3</a>
+  
+  # Icons
+  rss: true
+  email_address: # full email address, e.g. "sam@example.com"
+  behance:
+  bitbucket: 
+  dribbble: 
+  facebook: 
+  flickr: 
+  github: "carlosvara"
+  google_plus: 
+  instagram: 
+  linkedin: "https://www.linkedin.com/in/carlosvara" # full URL
+  pinterest: 
+  reddit: 
+  soundcloud: 
+  stack_exchange:  # full URL
+  steam: 
+  tumblr: 
+  twitter: 
+  wordpress: 
+  youtube: 
+  
+  # Scripts
+  google_analytics: "UA-11508629-1" # tracking id, e.g. "UA-000000-01"
+  disqus_shortname: "carinaenet"
+  
+  # Localization strings
+  str_follow_on: "Follow on"
+  str_rss_follow: "Follow RSS feed"
+  str_email: "Email"
+  str_next: "Next"
+  str_prev: "Prev"
+  str_continue_reading: "Continue reading"
+  
+  # Colors, typography and padding
+  # Open the "_sass > base" folder, and open "_variables.scss"
+
+# PAGINATION
+paginate: 10
+paginate_path: "blog/page:num"
+
+# BUILD SETTINGS
+markdown: kramdown
+highlighter: pygments
+sass:
+  sass_dir: _sass
+  style: :compressed
